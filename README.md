@@ -1,3 +1,6 @@
+## Modifications
+Working on changes and understanding of the code.
+
 sgx-perf
 ========
 
