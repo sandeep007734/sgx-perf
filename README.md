@@ -37,6 +37,12 @@ Warning: It is possible, to set it to zero. Setting it to 4294967296/`UINT_MAX` 
 If set to zero, you cannot launch any new processes as the kernel cannot map anything because its already at the limit.
 Rebooting is the only help in this case.
 
+Install:
+
+````
+sudo apt install libelf-dev
+````
+
 
 Limitations
 -----------
