@@ -51,7 +51,7 @@ void sigint_handler(int signum, siginfo_t *siginfo, void *context)
 	tcs_t *tcs_addr = nullptr;
 	__asm__("mov %%rbx, %0" : "=g"(tcs_addr) : : "rax", "rbx", "rcx");
 
-	std::cout << "Caught signal " << signum << std::endl;
+	std::cout << "\n====Caught signal " << signum << std::endl;
 
 	auto se = new sgxperf::SignalEvent(signum, nullptr, siginfo->si_code);
 
@@ -93,8 +93,9 @@ void sigint_handler(int signum, siginfo_t *siginfo, void *context)
 	{
 		if (old_handlers[signum] != nullptr)
 		{
-			std::cout << "Forwarding signal" << std::endl;
+			std::cout << "Forwarding signal. " <<SIGSEGV<< std::endl;
 			old_handlers[signum](signum, siginfo, context);
+			std::cout << "Forwarding signal.. DONE" << std::endl;
 		}
 		else
 		{

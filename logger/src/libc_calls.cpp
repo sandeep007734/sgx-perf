@@ -165,6 +165,9 @@ extern "C" int sigaction(int signum, const struct sigaction *act, struct sigacti
 			}
 			if (act != nullptr)
 			{
+				if(signum==SIGSEGV){
+					std::cout << "Registering for 11.. DONE" << std::endl;
+				}
 				old_handlers[signum] = act->sa_sigaction;
 			}
 			return 0;

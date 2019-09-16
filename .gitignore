@@ -11,3 +11,4 @@ venv/
 enclave_u.*
 enclave_t.*
 enclave.pem
+log
